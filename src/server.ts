@@ -4,6 +4,8 @@
  * Module dependencies.
  */
 
+console.log("Starting");
+
 import "reflect-metadata";
 import app from "./app";
 var debug = require("debug")("socketio-server:server");
