@@ -14,7 +14,8 @@ import socketServer from "./socket";
  * Get port from environment and store in Express.
  */
 
-var port = normalizePort(process.env.PORT || "9000");
+var port = normalizePort(process.env.PORT || "8080");
+console.log("Trying Port: ", port);
 app.set("port", port);
 
 /**
