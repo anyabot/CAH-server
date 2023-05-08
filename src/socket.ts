@@ -111,7 +111,7 @@ export default (httpServer) => {
       if (socket.id in room.players) {
         console.log(room.players)
         room.players[socket.id].ready = "ready";
-        if (Object.keys(room.players).every(pid => room.players[pid].ready == "ready")) {
+        if (Object.keys(room.players).length > 3 && Object.keys(room.players).every(pid => room.players[pid].ready == "ready")) {
           startGame(message.roomId);
           io.to(message.roomId).emit("game_start", {
             players: room.players,
