@@ -11,7 +11,7 @@ import app from "./app";
 var debug = require("debug")("socketio-server:server");
 import * as http from "http";
 import socketServer from "./socket";
-
+console.log("Import");
 /**
  * Get port from environment and store in Express.
  */
