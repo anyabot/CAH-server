@@ -5,14 +5,16 @@
   "license": "MIT",
   "scripts": {
     "start": "ts-node --esm ./src/server.ts",
-    "dev": "npm install -g npm@9.6.6 && npm install && npm start"
+    "dev": "npm install -g npm@9.6.6 && npm installnstanpm& yarn start"
   },
   "dependencies": {
+    "@types/node": "^16.0.0",
+    "axios": "^1.4.0",
     "cookie-parser": "~1.4.4",
     "cors": "^2.8.5",
     "debug": "~2.6.9",
     "express": "~4.16.1",
-    "fast-shuffle": "^6.0.0",
+    "fast-shuffle": "^6.0.1",
     "glob": "^7.1.7",
     "http-errors": "~1.6.3",
     "jade": "~1.11.0",
@@ -20,14 +22,9 @@
     "reflect-metadata": "^0.1.13",
     "socket-controllers": "^0.2.0",
     "socket.io": "^4.6.1",
-    "typedi": "^0.10.0",
-    "@types/node": "^16.0.0",
     "ts-node": "^10.9.1",
+    "typedi": "^0.10.0",
     "typescript": "^4.3.5"
-
-  },
-  "devDependencies": {
-
   },
   "engines": {
     "npm": "9.6.6"

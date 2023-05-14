@@ -1,9 +1,17 @@
 import { Room } from "./interface";
-import * as cah from './json/cah-all-compact.json';
+import axios from 'axios';
+let cah = {}
+let white: string[] = cah["white"]
+let black: {
+  text: string,
+  pick: number
+}[] = cah["black"]
+axios.get("https://raw.githubusercontent.com/anyabot/CAH-server/temp/src/json/cah-all-compact.json")
+.then(response => {
+  cah = response.data
+  white = cah["white"]
+  black = cah["black"]})
 import { shuffle } from 'fast-shuffle'
-
-const white = cah["white"]
-const black = cah["black"]
 
 export function stringGen(input_length: number): string {
   var result = "";
@@ -19,6 +27,7 @@ export const rooms: {[key:string]: Room} = {};
 
 
 export function startGame(roomId: string) {
+  console.log(white, black)
   const room = rooms[roomId];
   const judge = Object.keys(room.players).reduce((old, newKey) => room.players[old].time > room.players[newKey].time ? old : newKey, Object.keys(room.players)[0])
   room.judge = judge;
