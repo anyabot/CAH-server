@@ -4,7 +4,8 @@
   "private": true,
   "license": "MIT",
   "scripts": {
-    "start": "ts-node --esm ./src/server.ts"
+    "start": "ts-node --esm ./src/server.ts",
+    "dev": "yarn install && yarn start"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
